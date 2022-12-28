@@ -36,10 +36,13 @@
     /// объектов и к «0» будет применяться модификатор скорости.                      /// objects and "0" will have the speed modifier applied.
     ///  
     /// </summary>
+
     internal class Program
     {
+        
         static void Main(string[] args)
         {
+            
 
         }
     }
