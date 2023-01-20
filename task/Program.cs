@@ -37,6 +37,8 @@
     ///  
     /// </summary>
 
+    // Паттерн Decorator динамически добавляет объекту новые обязанности. 
+    // Является гибкой альтернативой порождению подклассов с целью расширения функциональности.
     internal class Program
     {
         
@@ -44,6 +46,28 @@
         {
             
 
+        }
+    }
+
+    public class UnitType
+    {
+        public string Name { get; private set; }
+        public UnitType Base { get; private set; }
+        public IReadOnlyDictionary<int, UnitType> UpgradesTo { get; private set; }
+        public int Attack { get; private set; }
+        public int Speed { get; private set; }
+        public int Health { get; private set; }
+        public int Defence { get; private set; }
+
+        public UnitType(string name, UnitType @base, int attack, int speed, int health, int defence, IReadOnlyDictionary<int, UnitType> upgradesTo)
+        {
+            Name = name;
+            Base = @base;
+            Attack = attack;
+            Speed = speed;
+            Health = health;
+            Defence = defence;
+            UpgradesTo = upgradesTo;
         }
     }
 }
